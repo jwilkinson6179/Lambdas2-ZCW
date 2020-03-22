@@ -1,6 +1,8 @@
 package com.zipcodewilmington.models;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class Person
 {
@@ -81,7 +83,8 @@ public class Person
 
     public void printPerson()
     {
-        System.out.printf("\nName: %s\nBirthday: %s\nGender: %s\nEmail Address: %s", this.name, this.birthday.toString(),
+        String formattedDate = birthday.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
+        System.out.printf("\nName: %s\nBirthday: %s\nGender: %s\nEmail Address: %s", this.name, formattedDate,
                 this.gender.name(), this.emailAddress);
     }
 

@@ -36,16 +36,16 @@ public class AdminToolTest
         List<Person> expected = new ArrayList<>();
         expected.add(jamesBond);
 
-        CheckPerson isAdult = new CheckPerson() {
+        class adultChecker implements CheckPerson
+        {
             @Override
-            public boolean test(Person p)
+            public boolean test(Person p) 
             {
-                Integer minimumAge = 18;
-                return (p.getAge() >= minimumAge);
+                return p.getAge() >= 18;
             }
-        };
+        }
 
-        List<Person> actual = tool.printPersons(personList, isAdult);
+        List<Person> actual = tool.printPersons(personList, new adultChecker());
 
         assertEquals(expected, actual);
     }
