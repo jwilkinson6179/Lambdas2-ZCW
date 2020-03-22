@@ -50,7 +50,7 @@ public class AdminToolTest
     }
 
     @Test
-    public void testIfWomanWithLocalClass()
+    public void testIfAdultWithAnonymousClass()
     {
         List<Person> expected = new ArrayList<>();
         expected.add(jamesBond);
