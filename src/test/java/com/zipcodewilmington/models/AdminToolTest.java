@@ -37,6 +37,7 @@ public class AdminToolTest
         expected.add(jamesBond);
 
         CheckPerson isAdult = new CheckPerson() {
+            @Override
             public boolean test(Person p)
             {
                 Integer minimumAge = 18;
