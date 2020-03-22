@@ -84,4 +84,6 @@ public class Person
         System.out.printf("\nName: %s\nBirthday: %s\nGender: %s\nEmail Address: %s", this.name, this.birthday.toString(),
                 this.gender.name(), this.emailAddress);
     }
+
+    // TODO: Check if people are trying to enter dates that haven't occurred yet, regex check for email validity
 }
