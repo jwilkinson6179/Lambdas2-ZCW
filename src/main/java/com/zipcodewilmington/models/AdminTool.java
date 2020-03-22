@@ -1,9 +1,11 @@
 package com.zipcodewilmington.models;
 
+import com.zipcodewilmington.interfaces.CheckPerson;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminTool implements CheckPerson
+public class AdminTool
 {
     List<Person> personList;
 
@@ -17,9 +19,19 @@ public class AdminTool implements CheckPerson
         this(new ArrayList<Person>());
     }
 
-    @Override
-    public boolean test(Person p)
+    public static List<Person> printPersons(List<Person> roster, CheckPerson tester)
     {
-        return false;
+        List<Person> filteredList = new ArrayList<>();
+
+        for (Person p : roster)
+        {
+            if (tester.test(p))
+            {
+                filteredList.add(p);
+                p.printPerson();
+            }
+        }
+
+        return filteredList;
     }
 }

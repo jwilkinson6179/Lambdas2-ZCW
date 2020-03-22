@@ -29,6 +29,11 @@ public class Person
         this(name, null, null, null);
     }
 
+    public Person()
+    {
+        this(null, null, null, null);
+    }
+
     public String getName()
     {
         return name;
@@ -72,5 +77,11 @@ public class Person
     public Integer getAge()
     {
         return LocalDate.now().atStartOfDay().getYear() - birthday.atStartOfDay().getYear();
+    }
+
+    public void printPerson()
+    {
+        System.out.printf("\nName: %s\nBirthday: %s\nGender: %s\nEmail Address: %s", this.name, this.birthday.toString(),
+                this.gender.name(), this.emailAddress);
     }
 }
